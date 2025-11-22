@@ -1,7 +1,17 @@
 def get_book_text():
-	with open("/home/mung4/Downloads/bookbot/bookbot/books/frankenstein.txt") as f:
-		file_contents = f.read()
-	return file_contents 
+    with open("books/frankenstein.txt") as f:
+        file_contents = f.read()
+    return file_contents
 
 def main():
-	print(get_book_text)
+    book_text = get_book_text()
+    print(book_text)
+
+def word_count():
+	frankenstein_book = get_book_text()
+	words = frankenstein_book.split()
+	return len(words)
+
+from stats import word_count
+
+print("Found", word_count(), "total words")
